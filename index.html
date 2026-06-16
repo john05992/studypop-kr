@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studypop | 학원 후기 매거진</title>
+<meta name="description" content="수강생 48,302건의 후기와 성적 데이터로 분석한 2026 종합 랭킹 매거진.">
+<meta name="keywords" content="교육후기, 교육랭킹, 수강생후기, 교육추천, 교육평가, 수강리뷰, 교육순위">
+<link rel="canonical" href="https://studypop.kr/">
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://studypop.kr/">
+<meta property="og:site_name" content="Studypop">
+<meta property="og:title" content="Studypop | 학원 후기 매거진">
+<meta property="og:description" content="수강생 48,302건의 후기와 성적 데이터로 분석한 2026 종합 랭킹 매거진.">
+<meta property="og:image" content="https://studypop.kr/apple-touch-icon.png">
+<meta property="og:locale" content="ko_KR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--cream:#F9F7F4;--ink:#111;--red:#C41230;--gold:#8B6914;--gray:#EDE9E3;--muted:#6B6560;--border:#D8D3CB}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;word-break:keep-all}
+
+nav{background:var(--ink);height:48px;position:sticky;top:0;z-index:100;display:flex;align-items:center}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;width:100%;gap:24px}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;color:var(--cream);letter-spacing:0;white-space:nowrap}
+.nav-logo em{font-style:italic;color:#D4A84B}
+.nav-divider{flex:1;height:1px;background:rgba(255,255,255,0.08)}
+.nav-right{font-size:9px;color:rgba(249,247,244,0.3);letter-spacing:4px;text-transform:uppercase;white-space:nowrap;font-family:'Inter',sans-serif}
+
+.top-bar{border-bottom:4px double var(--border);padding:10px 40px}
+.tb-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.ctb-issue{font-family:'Inter',sans-serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--muted)}
+.ctb-date{font-family:'Inter',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+
+.cover{background:var(--ink);padding:0;overflow:hidden;position:relative}
+.cover-main{max-width:1400px;margin:0 auto;padding:48px 40px 0;display:grid;grid-template-columns:1fr;gap:48px;align-items:end}
+@media(min-width:768px){.cover-main{grid-template-columns:1fr 1fr;gap:64px}}
+.cover-cat{font-family:'Inter',sans-serif;font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#D4A84B;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.cover-cat::before{content:'';display:block;width:28px;height:1px;background:#D4A84B}
+.cover-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(48px,6.5vw,84px);font-weight:700;line-height:1.05;letter-spacing:-0.5px;color:var(--cream);margin-bottom:24px}
+.cover-title em{font-style:italic;color:#D4A84B}
+.cover-body{font-size:16px;color:rgba(249,247,244,0.45);line-height:1.8;max-width:420px;margin-bottom:0;font-weight:300}
+.cover-nums{display:flex;gap:40px;padding-top:28px;margin-top:28px;border-top:1px solid rgba(255,255,255,0.08)}
+.cn-num{font-family:'Playfair Display',Georgia,serif;font-size:28px;font-weight:600;color:var(--cream);letter-spacing:-0.3px;line-height:1}
+.cn-label{font-family:'Inter',sans-serif;font-size:9px;color:rgba(249,247,244,0.3);margin-top:6px;letter-spacing:1px;text-transform:uppercase}
+.cover-right{position:relative;align-self:stretch;display:flex;align-items:flex-end}
+.cover-img-placeholder{
+  background:linear-gradient(145deg,#1E1408 0%,#2E2010 40%,#120D06 100%);
+  width:100%;height:100%;min-height:320px;
+  position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.cover-img-placeholder::before{
+  content:'STUDYPOP';
+  font-family:'Playfair Display',Georgia,serif;font-size:64px;font-weight:700;
+  color:rgba(139,105,20,0.06);letter-spacing:-1px;position:absolute;
+  white-space:nowrap;
+}
+.cover-rank-card{
+  position:absolute;bottom:0;right:0;
+  background:var(--red);padding:20px 24px;
+}
+.crc-label{font-family:'Inter',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:8px}
+.crc-num{font-family:'Playfair Display',Georgia,serif;font-size:36px;font-weight:700;color:#fff;line-height:1.1}
+.crc-sub{font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.55);margin-top:4px}
+
+.rule{border-top:1px solid var(--border);margin:0}
+.rule-thick{border-top:3px solid var(--ink);margin:0}
+.rule-red{border-top:6px solid var(--red);margin:0}
+
+.featured{max-width:1400px;margin:0 auto;padding:56px 40px;display:grid;grid-template-columns:1fr;gap:48px;border-bottom:1px solid var(--border)}
+@media(min-width:768px){.featured{grid-template-columns:1fr 1fr;gap:72px;align-items:start}}
+.fr-label{font-family:'Inter',sans-serif;font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--red);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.fr-label::before{content:'';display:block;width:20px;height:1px;background:var(--red)}
+.fr-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(26px,3.5vw,38px);font-weight:700;letter-spacing:-0.3px;line-height:1.15;margin-bottom:12px}
+.fr-subtitle{font-size:clamp(16px,2vw,19px);font-style:italic;color:var(--muted);margin-bottom:22px;font-weight:400;line-height:1.5}
+.fr-body{font-size:15px;line-height:1.9;color:var(--muted);margin-bottom:28px}
+.score-item{display:flex;align-items:center;padding:11px 0;border-bottom:1px solid var(--border)}
+.score-item:last-child{border-bottom:none}
+.score-label{font-family:'Inter',sans-serif;font-size:12px;font-weight:500;color:var(--ink);width:80px;flex-shrink:0}
+.score-bar-wrap{flex:1;margin:0 12px;height:2px;background:var(--border)}
+.score-bar-fill{height:100%;background:var(--red)}
+.score-num{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:var(--red);min-width:28px;text-align:right}
+.fr-pullquote{font-family:'Playfair Display',Georgia,serif;font-size:clamp(16px,2vw,20px);font-style:italic;line-height:1.7;color:var(--ink);border-left:4px solid var(--red);padding-left:24px;margin-bottom:28px}
+.fr-meta{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border)}
+.fm-cell{padding:18px 20px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.fm-cell:nth-child(2n){border-right:none}
+.fm-cell:nth-child(n+3){border-bottom:none}
+.fm-num{font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:700;color:var(--ink);letter-spacing:-0.3px;line-height:1}
+.fm-label{font-family:'Inter',sans-serif;font-size:10px;color:var(--muted);margin-top:5px;letter-spacing:0.3px}
+
+.review-section{max-width:1400px;margin:0 auto;padding:56px 40px;border-bottom:1px solid var(--border)}
+.rs-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:32px;padding-bottom:14px;border-bottom:3px solid var(--ink)}
+.rs-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,2.8vw,30px);font-weight:700;letter-spacing:-0.2px}
+.rs-more{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);font-style:italic;cursor:pointer}
+.rv-grid{display:grid;grid-template-columns:1fr;gap:32px}
+@media(min-width:560px){.rv-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.rv-grid{grid-template-columns:repeat(3,1fr)}}
+.rv-card{border-bottom:2px solid var(--ink);padding-bottom:28px}
+.rv-tag{font-family:'Inter',sans-serif;font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.rv-tag::before{content:'';display:block;width:12px;height:1px;background:var(--red)}
+.rv-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(17px,2.2vw,21px);font-weight:700;letter-spacing:-0.1px;line-height:1.25;margin-bottom:10px}
+.rv-body{font-size:14px;line-height:1.85;color:var(--muted);margin-bottom:16px}
+.rv-foot{display:flex;justify-content:space-between;align-items:center}
+.rv-score{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:var(--red)}
+.rv-author{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);font-style:italic}
+
+.rankings{background:var(--ink)}
+.rkn-inner{max-width:1400px;margin:0 auto;padding:56px 40px;display:grid;grid-template-columns:1fr;gap:48px}
+@media(min-width:768px){.rkn-inner{grid-template-columns:300px 1fr;gap:64px}}
+.rkn-kicker{font-family:'Inter',sans-serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#D4A84B;margin-bottom:16px}
+.rkn-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(38px,4.5vw,54px);font-weight:700;letter-spacing:-0.5px;line-height:1.1;color:var(--cream);margin-bottom:22px}
+.rkn-body{font-size:14px;color:rgba(249,247,244,0.35);line-height:1.85;font-weight:300}
+.rk-item{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.rk-item:last-child{border-bottom:none}
+.rk-num{font-family:'Playfair Display',Georgia,serif;font-size:14px;font-weight:700;color:#D4A84B;width:28px;flex-shrink:0;font-style:italic}
+.rk-info{flex:1;padding:0 20px}
+.rk-name{font-size:15px;font-weight:600;color:var(--cream);margin-bottom:3px;line-height:1.3}
+.rk-detail{font-family:'Inter',sans-serif;font-size:11px;color:rgba(249,247,244,0.3);line-height:1.5}
+.rk-score{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;color:#D4A84B}
+
+.data-stats{max-width:1400px;margin:0 auto;padding:48px 40px;display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-bottom:1px solid var(--border)}
+@media(min-width:768px){.data-stats{grid-template-columns:repeat(4,1fr)}}
+.ds-cell{padding:0 24px;border-right:1px solid var(--border)}
+.ds-cell:first-child{padding-left:0}
+.ds-cell:last-child{border-right:none}
+.ds-num{font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,4vw,44px);font-weight:700;letter-spacing:-1px;line-height:1;color:var(--ink);margin-bottom:10px}
+.ds-label{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);line-height:1.6}
+
+.essay{max-width:1400px;margin:0 auto;padding:56px 40px;display:grid;grid-template-columns:1fr;gap:56px}
+@media(min-width:768px){.essay{grid-template-columns:1fr 1fr;gap:80px}}
+.essay-tag{font-family:'Inter',sans-serif;font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.essay-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(20px,2.8vw,28px);font-weight:700;letter-spacing:-0.2px;line-height:1.25;margin-bottom:22px}
+.essay-body{font-size:15px;line-height:1.9;color:var(--muted)}
+.essay-body p{margin-bottom:20px}
+.essay-quote{font-family:'Playfair Display',Georgia,serif;font-size:18px;font-style:italic;color:var(--ink);line-height:1.65;border-top:3px solid var(--ink);border-bottom:1px solid var(--border);padding:22px 0;margin-top:32px}
+
+footer{background:var(--ink);padding:32px 40px}
+.footer-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.f-logo{font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:var(--cream)}
+.f-logo em{font-style:italic;color:#D4A84B}
+.f-meta{font-family:'Inter',sans-serif;font-size:9px;color:rgba(249,247,244,0.25);letter-spacing:1px;text-transform:uppercase}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "@id": "https://studypop.kr/#organization",
+  "name": "Studypop",
+  "alternateName": ["스터디팝", "Study Pop"],
+  "url": "https://studypop.kr",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://studypop.kr/apple-touch-icon.png",
+    "width": 180,
+    "height": 180
+  },
+  "image": "https://studypop.kr/apple-touch-icon.png",
+  "description": "수강생 후기와 성적 데이터를 기반으로 한 교육기관 종합 랭킹 매거진.",
+  "areaServed": "대한민국",
+  "telephone": "010-4726-3581",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "경기도 수원시 영통구 매탄동 334",
+    "addressCountry": "KR"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://studypop.kr/#website",
+  "name": "Studypop",
+  "alternateName": ["스터디팝", "Study Pop"],
+  "url": "https://studypop.kr",
+  "publisher": {
+    "@id": "https://studypop.kr/#organization"
+  },
+  "inLanguage": "ko-KR"
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Study<em>pop</em></div>
+    <div class="nav-divider"></div>
+    <div class="nav-right">학원 후기 매거진 · Vol. 12</div>
+  </div>
+</nav>
+
+<div class="top-bar">
+  <div class="tb-inner">
+    <div class="ctb-issue">Issue 12 · 2026 Summer</div>
+    <div class="ctb-date">수강 후기 · 랭킹 · 데이터 분석</div>
+  </div>
+</div>
+<div class="rule-red"></div>
+
+<div class="cover">
+  <div class="cover-main">
+    <div>
+      <div class="cover-cat">Cover Story</div>
+      <h1 class="cover-title">2026년<br><em>최고의</em><br>학원은</h1>
+      <div class="cover-body">전국 12,841개 기관을 수강생 후기, 성적 향상 데이터, 강사 경력으로 분석했습니다. 진짜 데이터, 진짜 후기.</div>
+      <div class="cover-nums">
+        <div><div class="cn-num">12,841</div><div class="cn-label">분석 기관</div></div>
+        <div><div class="cn-num">48,302</div><div class="cn-label">수강생 후기</div></div>
+        <div><div class="cn-num">★ 4.6</div><div class="cn-label">평균 만족도</div></div>
+      </div>
+    </div>
+    <div class="cover-right">
+      <div class="cover-img-placeholder">
+        <div class="cover-rank-card">
+          <div class="crc-label">이달의 1위</div>
+          <div class="crc-num">마포<br>글로벌</div>
+          <div class="crc-sub">영어 전문 부문</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="rule-thick"></div>
+
+<div class="featured">
+  <div>
+    <div class="fr-label">이달의 피처</div>
+    <div class="fr-title">마포 글로벌 영어원</div>
+    <div class="fr-subtitle">원어민 강사와 함께하는 영어의 모든 것</div>
+    <div class="fr-body">마포구에서 8년, 원어민 강사 100% 운영으로 차별화된 영어전문 센터입니다. 내신·수능·회화를 통합 커버하는 커리큘럼으로 전국 영어 부문 1위에 올랐습니다. 최근 3년 영어 1등급 배출률 98%, 성인 회화 수료생 취업 성공률 74%.</div>
+    <div>
+      <div class="score-item"><div class="score-label">강의 수준</div><div class="score-bar-wrap"><div class="score-bar-fill" style="width:99%"></div></div><div class="score-num">4.9</div></div>
+      <div class="score-item"><div class="score-label">성적 향상</div><div class="score-bar-wrap"><div class="score-bar-fill" style="width:96%"></div></div><div class="score-num">4.8</div></div>
+      <div class="score-item"><div class="score-label">커리큘럼</div><div class="score-bar-wrap"><div class="score-bar-fill" style="width:94%"></div></div><div class="score-num">4.7</div></div>
+      <div class="score-item"><div class="score-label">교사 피드백</div><div class="score-bar-wrap"><div class="score-bar-fill" style="width:90%"></div></div><div class="score-num">4.5</div></div>
+      <div class="score-item"><div class="score-label">가성비</div><div class="score-bar-wrap"><div class="score-bar-fill" style="width:80%"></div></div><div class="score-num">4.0</div></div>
+    </div>
+  </div>
+  <div>
+    <div class="fr-pullquote">"수능 영어에서 1등급을 못 받던 아이가 3개월 만에 1등급을 받았습니다. 원어민 발음 교정과 독해 전략 수업이 특히 효과적이었어요."</div>
+    <div class="fr-meta">
+      <div class="fm-cell"><div class="fm-num">98%</div><div class="fm-label">영어 1등급 배출률</div></div>
+      <div class="fm-cell"><div class="fm-num">8년</div><div class="fm-label">마포구 운영 경력</div></div>
+      <div class="fm-cell"><div class="fm-num">월 38만</div><div class="fm-label">평균 수강료</div></div>
+      <div class="fm-cell"><div class="fm-num">★ 4.9</div><div class="fm-label">종합 만족도</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="review-section">
+  <div class="rs-head">
+    <div class="rs-title">이달의 수강 후기</div>
+    <div class="rs-more">전체 48,302개 후기 보기 →</div>
+  </div>
+  <div class="rv-grid">
+    <div class="rv-card"><div class="rv-tag">고양 · 수학</div><div class="rv-title">일산 수학올림피아드원, 중등 수학의 기준</div><div class="rv-body">중학교 1학년부터 다녔는데, 수학올림피아드 지역 예선을 통과했습니다. 개념 위주가 아닌 사고력 훈련 방식이 인상적이었어요. 선생님이 왜 틀렸는지 항상 설명해 줘서 이해도가 높아졌습니다.</div><div class="rv-foot"><div class="rv-score">★ 4.8</div><div class="rv-author">— 고양시 학부모</div></div></div>
+    <div class="rv-card"><div class="rv-tag">부산 · 영어</div><div class="rv-title">부산 센텀 외국어원, 성인 영어의 새 기준</div><div class="rv-body">직장인 대상 비즈니스 영어 과정을 수강했습니다. 외국계 기업 취업 인터뷰 준비에 실질적인 도움을 받았습니다. 강사 모두 해외 거주 10년 이상 경험자로 자연스러운 표현을 많이 배웠어요.</div><div class="rv-foot"><div class="rv-score">★ 4.7</div><div class="rv-author">— 부산 해운대 직장인</div></div></div>
+    <div class="rv-card"><div class="rv-tag">성남 · 코딩</div><div class="rv-title">판교 IT 코딩원, 실제 프로젝트로 배우다</div><div class="rv-body">중학생 아이가 React로 간단한 웹앱을 직접 만들게 됐습니다. 이론 없이 바로 실전 프로젝트 방식으로 진행해서 집중도가 높았어요. 강사분이 IT 기업 현직자라 실무 이야기를 들을 수 있었습니다.</div><div class="rv-foot"><div class="rv-score">★ 4.8</div><div class="rv-author">— 성남시 학부모</div></div></div>
+    <div class="rv-card"><div class="rv-tag">안양 · 과학</div><div class="rv-title">안양 비산 과학탐구, 수능 과학의 핵심</div><div class="rv-body">물리2를 포기하려다 이 학원에서 다시 시작했습니다. 개념 그림 설명이 교과서보다 훨씬 직관적이었고, 기출 분석을 통해 출제 패턴을 익힐 수 있었어요. 수능에서 물리2 1등급을 받았습니다.</div><div class="rv-foot"><div class="rv-score">★ 4.7</div><div class="rv-author">— 안양시 학생</div></div></div>
+    <div class="rv-card"><div class="rv-tag">인천 · 논술</div><div class="rv-title">인천 송도 논술원, 연대 논술 합격</div><div class="rv-body">1년 수강 후 연세대 사회과학 논술에 합격했습니다. 매주 실전 답안을 쓰고 강사에게 첨삭받는 방식이 효과적이었습니다. 논리 구조를 잡는 훈련이 대학 입학 후에도 큰 도움이 됩니다.</div><div class="rv-foot"><div class="rv-score">★ 4.8</div><div class="rv-author">— 인천시 학생</div></div></div>
+    <div class="rv-card"><div class="rv-tag">대구 · 수능</div><div class="rv-title">대구 수성 수능전문, 재수의 선택</div><div class="rv-body">재수생 전용 반에서 6개월 수강하고 목표 대학에 합격했습니다. 현역 학생과 분리된 환경이 집중에 도움이 됐고, 매주 모의고사 분석 피드백이 약점을 정확히 짚어줬습니다.</div><div class="rv-foot"><div class="rv-score">★ 4.6</div><div class="rv-author">— 대구 수성구 학생</div></div></div>
+  </div>
+</div>
+
+<div class="rankings">
+  <div class="rkn-inner">
+    <div>
+      <div class="rkn-kicker">2026 Rankings</div>
+      <h2 class="rkn-title">종합<br>랭킹</h2>
+      <div class="rkn-body">수강생 만족도, 성적 향상률, 합격 실적, 수강료 적정성을 종합한 스터디팝 공식 랭킹입니다.</div>
+    </div>
+    <div>
+      <div class="rk-item"><div class="rk-num">01</div><div class="rk-info"><div class="rk-name">마포 글로벌 영어원</div><div class="rk-detail">마포구 성산동 · 영어 · 고등 · 월 38만원</div></div><div class="rk-score">98.2</div></div>
+      <div class="rk-item"><div class="rk-num">02</div><div class="rk-info"><div class="rk-name">일산 수학올림피아드원</div><div class="rk-detail">경기 고양시 일산동구 · 수학 · 중등 · 월 32만원</div></div><div class="rk-score">96.4</div></div>
+      <div class="rk-item"><div class="rk-num">03</div><div class="rk-info"><div class="rk-name">부산 센텀 외국어원</div><div class="rk-detail">부산 해운대구 우동 · 영어 · 성인 · 월 28만원</div></div><div class="rk-score">95.1</div></div>
+      <div class="rk-item"><div class="rk-num">04</div><div class="rk-info"><div class="rk-name">판교 IT 코딩원</div><div class="rk-detail">경기 성남시 분당구 · 코딩 · 초중등 · 월 36만원</div></div><div class="rk-score">94.7</div></div>
+      <div class="rk-item"><div class="rk-num">05</div><div class="rk-info"><div class="rk-name">안양 비산 과학탐구</div><div class="rk-detail">경기 안양시 동안구 · 과학 · 고등 · 월 40만원</div></div><div class="rk-score">93.2</div></div>
+      <div class="rk-item"><div class="rk-num">06</div><div class="rk-info"><div class="rk-name">인천 송도 논술원</div><div class="rk-detail">인천 연수구 송도동 · 논술 · 고등 · 월 33만원</div></div><div class="rk-score">91.8</div></div>
+      <div class="rk-item"><div class="rk-num">07</div><div class="rk-info"><div class="rk-name">대구 수성 수능전문</div><div class="rk-detail">대구 수성구 범어동 · 수능 · 재수 · 월 42만원</div></div><div class="rk-score">90.3</div></div>
+      <div class="rk-item"><div class="rk-num">08</div><div class="rk-info"><div class="rk-name">대전 유성 수학교실</div><div class="rk-detail">대전 유성구 봉명동 · 수학 · 초중등 · 월 26만원</div></div><div class="rk-score">88.9</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="data-stats">
+  <div class="ds-cell"><div class="ds-num">48,302</div><div class="ds-label">수강생 실제 후기 수집</div></div>
+  <div class="ds-cell"><div class="ds-num">94%</div><div class="ds-label">후기 인증 수강생 비율</div></div>
+  <div class="ds-cell"><div class="ds-num">★ 4.6</div><div class="ds-label">전국 평균 만족도</div></div>
+  <div class="ds-cell"><div class="ds-num">+28점</div><div class="ds-label">평균 성적 향상폭 (6개월)</div></div>
+</div>
+
+<div class="essay">
+  <div>
+    <div class="essay-tag">Editor's Letter</div>
+    <h2 class="essay-title">좋은 교육기관을 고른다는 것의 의미</h2>
+    <div class="essay-body">
+      <p>교육기관을 선택하는 일은 단순히 브랜드를 고르는 것이 아닙니다. 아이의 학습 스타일, 현재 수준, 목표 성적, 그리고 가정의 경제적 상황까지 모두 고려해야 하는 복잡한 결정입니다.</p>
+      <p>스터디팝은 2026년 한 해 동안 전국 12,841개 기관의 수강생 후기 48,302건을 수집하고 분석했습니다. 우리가 발견한 사실은 놀라웠습니다 — 비싼 곳이 반드시 좋은 곳은 아니었습니다.</p>
+      <p>만족도 최상위 10% 기관 중 43%는 전국 평균 수강료보다 낮은 금액을 받고 있었습니다. 결국 중요한 것은 아이에게 맞는 교수법과 강사와의 신뢰 관계였습니다.</p>
+    </div>
+    <div class="essay-quote">비싼 곳이 아닌, 맞는 곳을 찾는 것이 진짜 입시 전략입니다.</div>
+  </div>
+  <div>
+    <div class="essay-tag">By the Numbers</div>
+    <h2 class="essay-title">숫자로 보는 2026 교육 시장</h2>
+    <div class="essay-body">
+      <p>전국 교육 시장 규모는 연간 24조 원을 넘어섰습니다. 서울 강남구 한 곳만으로도 전체의 8.4%를 차지합니다.</p>
+      <p>흥미로운 점은 온라인 교육의 성장입니다. 2023년 대비 2026년 온라인 수강 비율은 31% 증가했으며, 만족도 역시 오프라인 대비 91% 수준으로 빠르게 좁혀졌습니다.</p>
+      <p>초등학생의 78%, 중학생의 84%, 고등학생의 91%가 최소 한 개 이상의 교육기관에 다니고 있습니다. 한국 교육 환경에서 사교육은 선택이 아닌 필수가 된 지 오래입니다.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="f-logo">Study<em>pop</em></div>
+    <div class="f-meta">© 2026 Studypop · 학원 후기 매거진 · Vol. 12 · 48,302 reviews</div>
+  </div>
+</footer>
+
+</body>
+</html>

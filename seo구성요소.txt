@@ -1,0 +1,48 @@
+[ studypop.kr — Studypop | 학원 후기 매거진 ]
+
+■ title: Studypop | 학원 후기 매거진
+■ description: 수강생 48,302건의 후기와 성적 데이터로 분석한 2026 종합 랭킹 매거진.
+■ keywords: 교육후기, 교육랭킹, 수강생후기, 교육추천, 교육평가, 수강리뷰, 교육순위
+
+─────────────────────────────────────────
+
+<!-- 구조화 데이터: EducationalOrganization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "@id": "https://studypop.kr/#organization",
+  "name": "Studypop",
+  "alternateName": ["스터디팝", "Study Pop"],
+  "url": "https://studypop.kr",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://studypop.kr/apple-touch-icon.png",
+    "width": 180,
+    "height": 180
+  },
+  "image": "https://studypop.kr/apple-touch-icon.png",
+  "description": "수강생 후기와 성적 데이터를 기반으로 한 교육기관 종합 랭킹 매거진.",
+  "areaServed": "대한민국",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "KR"
+  }
+}
+</script>
+
+<!-- 구조화 데이터: WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://studypop.kr/#website",
+  "name": "Studypop",
+  "alternateName": ["스터디팝", "Study Pop"],
+  "url": "https://studypop.kr",
+  "publisher": {
+    "@id": "https://studypop.kr/#organization"
+  },
+  "inLanguage": "ko-KR"
+}
+</script>

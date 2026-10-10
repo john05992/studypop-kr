@@ -4,4 +4,4 @@ Allow: /
 User-agent: Yeti
 Allow: /
 
-Sitemap: https://studypop.kr/sitemap.xml
+Sitemap: https://studypop.kr/sitemapx.xml
